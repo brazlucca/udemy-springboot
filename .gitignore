@@ -2,3 +2,4 @@
 src/main/resources/archetype-resources/
 src/main/resources/META-INF/
 target/
+vendas.iml
