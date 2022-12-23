@@ -2,6 +2,16 @@ package com.springboot.domain.entity;
 
 public class Cliente {
 
+    public Cliente() {
+    }
+    public Cliente(String nome) {
+        this.nome = nome;
+    }
+    public Cliente(String nome, Integer id) {
+        this.nome = nome;
+        this.id = id;
+    }
+
     private Integer id;
     private String nome;
 
@@ -19,5 +29,13 @@ public class Cliente {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                '}';
     }
 }
