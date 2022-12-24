@@ -53,7 +53,7 @@ public class VendasApplication {
             System.out.println("");
 
             System.out.println("DELETE POR NOME");
-            
+
             clienteRepository.delete(new Cliente("Lucca", 1));
 
             todosClientes = clienteRepository.recuperar();
