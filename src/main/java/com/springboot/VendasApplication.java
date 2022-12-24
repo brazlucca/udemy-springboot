@@ -33,22 +33,22 @@ public class VendasApplication {
             clienteRepository.save(new Cliente("Braz Barros"));
 
             System.out.println("RECUPERA TUDO");
-            var todosClientes = clienteRepository.recuperar();
+            var todosClientes = clienteRepository.findAll();
             todosClientes.forEach(System.out::println);
             System.out.println("");
 
             System.out.println("ATUALIZA TUDO");
             todosClientes.forEach(c -> {
                 c.setNome(c.getNome() + " Atualizado");
-                clienteRepository.update(c);
+                clienteRepository.save(c);
             });
 
-            todosClientes = clienteRepository.recuperar();
+            todosClientes = clienteRepository.findAll();
             todosClientes.forEach(System.out::println);
             System.out.println("");
 
             System.out.println("RECUPERA POR NOME TUDO");
-            var listaByName = clienteRepository.findByName(new Cliente("Lucca"));
+            var listaByName = clienteRepository.findByNomeLike("Lucca");
             listaByName.forEach(System.out::println);
             System.out.println("");
 
@@ -56,7 +56,7 @@ public class VendasApplication {
 
             clienteRepository.delete(new Cliente("Lucca", 1));
 
-            todosClientes = clienteRepository.recuperar();
+            todosClientes = clienteRepository.findAll();
             todosClientes.forEach(System.out::println);
             System.out.println("");
         };
